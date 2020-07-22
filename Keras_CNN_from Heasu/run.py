@@ -8,7 +8,7 @@ from keras.layers import Dense
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import load_model
 import os
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 
 class KCNN(object):
@@ -65,24 +65,24 @@ class KCNN(object):
                                          validation_data = self.test_set,
                                          validation_steps = 7)
                 
-                #matplotlib 생성
-                # fig, loss_ax = plt.subplots()
-                # acc_ax = loss_ax.twinx()
+                # matplotlib 생성
+                fig, loss_ax = plt.subplots()
+                acc_ax = loss_ax.twinx()
                 
-                # loss_ax.plot(hist.history['loss'], 'y', label='train loss')
-                # loss_ax.plot(hist.history['val_loss'], 'r', label='val loss')
+                loss_ax.plot(hist.history['loss'], 'y', label='train loss')
+                loss_ax.plot(hist.history['val_loss'], 'r', label='val loss')
                 
-                # acc_ax.plot(hist.history['acc'], 'b', label='train acc')
-                # acc_ax.plot(hist.history['val_acc'], 'g', label='val acc')
+                acc_ax.plot(hist.history['accuracy'], 'b', label='train accuracy')
+                acc_ax.plot(hist.history['val_accuracy'], 'g', label='val accuracy')
                 
-                # loss_ax.set_xlabel('epoch')
-                # loss_ax.set_ylabel('loss')
-                # acc_ax.set_ylabel('accuracy')
+                loss_ax.set_xlabel('epoch')
+                loss_ax.set_ylabel('loss')
+                acc_ax.set_ylabel('accuracy')
                 
-                # loss_ax.legend(loc='upper left')
-                # acc_ax.legend(loc='lower left')
+                loss_ax.legend(loc='upper left')
+                acc_ax.legend(loc='lower left')
                 
-                # plt.show()
+                plt.show()
 
                 self.classifier.save('./model.h5')
         
