@@ -19,7 +19,7 @@ class KCNN(object):
 
         #모델 구성
         def create_model(self):
-            self.classifier.add(Conv2D(32, (3, 3), input_shape = (128, 128, 3), activation = 'relu'))
+            self.classifier.add(Conv2D(32, (3, 3), input_shape = (pic_size, pic_size, 3), activation = 'relu'))
             self.classifier.add(MaxPooling2D(pool_size = (2, 2)))
             self.classifier.add(Conv2D(32, (3, 3), activation = 'relu'))
             self.classifier.add(MaxPooling2D(pool_size = (2, 2)))
@@ -50,12 +50,12 @@ class KCNN(object):
                                                   )
                 
                 self.training_set = train_datagen.flow_from_directory(train_path,
-                                                                 target_size = (128,128),
+                                                                 target_size = (pic_size,pic_size),
                                                                  batch_size = 4,
                                                                  class_mode = 'binary')
 
                 self.test_set = test_datagen.flow_from_directory(test_path,
-                                                            target_size = (128,128),
+                                                            target_size = (pic_size,pic_size),
                                                             batch_size = 3,
                                                             class_mode = 'binary')
 
@@ -90,7 +90,7 @@ class KCNN(object):
         def predict(self,test_path):
             test_datagen = ImageDataGenerator(rescale=1. / 255)
             test_set = test_datagen.flow_from_directory(test_path,
-                                                             target_size=(128,128),
+                                                             target_size=(pic_size,pic_size),
                                                              batch_size=3,
                                                              class_mode='binary')
 
@@ -104,7 +104,7 @@ class KCNN(object):
 if __name__=='__main__':
     # 모델을 생성합니다.
     model = KCNN()
-
+    pic_size = 256
     # args1 : 훈련데이터 셋위치(디렉토리형태),
     # args2 : 테스트 데이터위치(디렉토리형태),
     # args3 : 훈련반복횟수
