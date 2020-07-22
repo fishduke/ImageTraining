@@ -83,7 +83,8 @@ class KCNN(object):
                 acc_ax.legend(loc='lower left')
                 
                 plt.show()
-
+                print('222222222222222222222222222222')
+                print(classifier)
                 self.classifier.save('./model.h5')
         
         #모델 평가
