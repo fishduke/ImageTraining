@@ -59,6 +59,7 @@ class KCNN(object):
                                                             batch_size = 3,
                                                             class_mode = 'binary')
 
+                #모델 피팅
                 hist = self.classifier.fit_generator(self.training_set,
                                          steps_per_epoch = 13,
                                          epochs = epochs,
@@ -83,8 +84,8 @@ class KCNN(object):
                 acc_ax.legend(loc='lower left')
                 
                 plt.show()
-                print('222222222222222222222222222222')
-                print(classifier)
+
+
                 self.classifier.save('./model.h5')
         
         #모델 평가
