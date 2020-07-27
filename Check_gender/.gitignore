@@ -1,4 +1,2 @@
-Dataset/Test/
-Dataset/Train/
-Dataset/Validation/
+Dataset/
 check_gender.h5
