@@ -111,6 +111,7 @@ if __name__=='__main__':
     # args2 : 테스트 데이터위치(디렉토리형태),
     # args3 : 훈련반복횟수
     # model.fit('../Check_gender/dataset/training_set', './dataset/test_set', 50)
+    # model.fit('../Check_gender/dataset/training_set', './dataset/test_set', 50)
     model.fit('./dataset/training_set', './dataset/test_set', 50)
 
     label, result = model.predict('./dataset/test')
