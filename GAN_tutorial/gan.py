@@ -131,6 +131,7 @@ class GAN():
             # ---------------------
             #  Train Generator
             # ---------------------
+            
 
             noise = np.random.normal(0, 1, (batch_size, self.latent_dim))
 
