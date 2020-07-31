@@ -19,7 +19,6 @@ class CNN(object):
         self.model.add(Dropout(0.5))
         self.model.add(Dense(1, activation='sigmoid'))
         
-
     def compile_model(self):
         self.model.compile(loss='binary_crossentropy', optimizer='sgd', metrics=['accuracy'])
 
