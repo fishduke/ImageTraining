@@ -54,7 +54,6 @@ class GAN():
         self.combined = Model(z, validity)
         self.combined.compile(loss='binary_crossentropy', optimizer=optimizer)
 
-
     def build_generator(self):
 
         model = Sequential()
