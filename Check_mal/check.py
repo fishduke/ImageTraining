@@ -22,6 +22,11 @@ class CNN(object):
     def compile_model(self):
         self.model.compile(loss='binary_crossentropy', optimizer='sgd', metrics=['accuracy'])
 
+
+
+
+
+
     def __init__(self):
         self.model = Sequential()
 
