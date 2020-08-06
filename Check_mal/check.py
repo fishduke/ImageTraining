@@ -24,7 +24,6 @@ class CNN(object):
 
 
 
-
     def __init__(self):
         self.model = Sequential()
 
