@@ -8,11 +8,8 @@ from keras.layers.convolutional import UpSampling2D, Conv2D
 from keras.models import Sequential, Model
 from keras.optimizers import Adam
 import keras
-
 import matplotlib.pyplot as plt
-
 import sys
-
 import numpy as np
 
 import tensorflow as tf
@@ -54,7 +51,6 @@ class GAN():
         self.combined = Model(z, validity)
         self.combined.compile(loss='binary_crossentropy', optimizer=optimizer)
 
-
     def build_generator(self):
 
         model = Sequential()
@@ -70,7 +66,6 @@ class GAN():
         model.add(BatchNormalization(momentum=0.8))
         model.add(Dense(np.prod(self.img_shape), activation='tanh'))
         model.add(Reshape(self.img_shape))
-
         model.summary()
 
         noise = Input(shape=(self.latent_dim,))
