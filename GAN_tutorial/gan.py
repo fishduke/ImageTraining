@@ -19,6 +19,7 @@ mnist = input_data.read_data_sets("Data/MNIST_data/", one_hot = True)
 
 
 
+
 class GAN():
     def __init__(self):
         self.img_rows = 28
