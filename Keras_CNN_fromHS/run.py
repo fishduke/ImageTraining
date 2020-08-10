@@ -11,6 +11,7 @@ import os
 import matplotlib.pyplot as plt
 
 
+
 class KCNN(object):
         def __init__(self):
             self.classifier = Sequential()
