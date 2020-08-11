@@ -9,13 +9,16 @@ from keras.models import Sequential, Model
 from keras.optimizers import Adam
 import keras
 import matplotlib.pyplot as plt
-import sys
+
 import numpy as np
 
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets("Data/MNIST_data/", one_hot = True)
+# mnist = input_data.read_data_sets("Data/MNIST_data/", one_hot = True)
+mnist = keras.datasets.mnist
+
+
 
 class GAN():
     def __init__(self):
