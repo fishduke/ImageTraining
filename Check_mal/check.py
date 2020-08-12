@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 
 
 
-
 class CNN(object):
     def create_model(self):
         self.model.add(Conv2D(32, (3,3), activation='relu', input_shape=(256, 256, 3)))
